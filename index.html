@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <?php
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Perform any necessary validation or processing here
+        // For example, you can check if the email is valid or if the password meets certain requirements.
+
+        // Save the data to a database or perform any other necessary actions
+
+        // Redirect the user to a success page
+        header("Location: success.html");
+        exit();
+    }
+    ?>
+    
+    <h2>Registration Form</h2>
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+        
+        <input type="submit" name="submit" value="Register">
+    </form>
+</body>
+</html>
